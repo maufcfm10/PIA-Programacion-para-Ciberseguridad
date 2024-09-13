@@ -1,5 +1,5 @@
-New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\ApiCalis.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\ApiCalis.psm1"
-Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\ApiCalis.psm1"
+New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\  VirusTotalReport.psm1"
+Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psm1"
 Get-Module Get-VirusTotalReport
 
 New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Arch_Oc.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Arch_Oc.psm1"
@@ -19,7 +19,7 @@ do {
     Write-Host "1) Revision de archivos hashes"
     Write-Host "2) Buscar archivos ocultos"
     Write-Host "3) Revision de uso de recursos del sistema"
-    Write-Host "4) Tarea adicional"
+    Write-Host "4) Revisas Conexiones sospechosas"
     Write-Host "5) Salir"
 
     $opcion = Read-Host
