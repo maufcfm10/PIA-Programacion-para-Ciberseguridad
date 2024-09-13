@@ -1,4 +1,4 @@
-﻿#Cambiamos la politica de ejecucion
+#Cambiamos la politica de ejecucion
 Set-ExecutionPolicy -ExecutionPolicy Bypass
 #Asignamos una funcion la cual servira para buscar los archivos ocultos en la ruta deseada
 function archivos_ocultos { param ([string]$ruta)
@@ -21,7 +21,7 @@ if ($buscar) {
     #Busca los archivos ocultos dentro de la carpeta encontrada
         Write-Host "Buscando archivos ocultos en la carpeta $ruta"
         $busqueda = Get-ChildItem -Path $ruta -Recurse -Force | Where-Object { $_.Attributes -match 'Hidden' }
-        #Si encuentra algun archivo oculto en la carpeta, nos indicara cuales son
+        #Si encuentra algun archivo oculto en la carpeta, nos indicara cuales son. AVISO: Tarda en cargar el programa, es normal debido a que busca en todo el equipo la carpeta. El tiempo no excede de los 3 minutos.
         if ($busqueda) {
             Write-Host "Archivos ocultos encontrados:"
             $busqueda | ForEach-Object { Write-Host $_.FullName }
@@ -34,5 +34,3 @@ if ($buscar) {
     Write-Host "No se encontraron carpetas con el nombre '$carpeta' en $directorio_raiz."
 }
 }
-#Se imprime la funcion
-archivos_ocultos 
