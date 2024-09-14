@@ -1,5 +1,10 @@
-#Cambiamos la politica de ejecucion
-Set-ExecutionPolicy -ExecutionPolicy Bypass
+# Cambiamos la política de ejecución
+try {
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force -ErrorAction Stop
+} catch {
+    Write-Host "Error al cambiar la política de ejecución: $_"
+    exit 1
+}
 #Asignamos una funcion la cual servira para buscar los archivos ocultos en la ruta deseada
 function archivos_ocultos { param ([string]$ruta)
 

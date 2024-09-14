@@ -16,25 +16,4 @@ function Get-VirusTotalReport {
     catch {
         Write-Host "Ocurrio un error al obtener el reporte de VirusTotal: $_"
     }
-    function Scan-FilesInFolder {
-        param ([string]$FolderPath, [string]$ApiKey)
-        $files = Get-ChildItem -Path $FolderPath -File
-        foreach ($file in $files) {
-            try {
-                $hash = Get-FileHash -Path $file.FullName -Algorithm SHA256
-            
-                $url = "https://www.virustotal.com/vtapi/v2/file/report?apikey=$ApiKey&resource=$($hash.Hash)"
-                $response = Invoke-RestMethod -Uri $url -Method Get
-
-                if ($response.response_code -eq 1) {
-                    Write-Output "$($file.Name): $($response.positives)/$($response.total) antivirus lo marcaron como malicioso."
-                } else {
-                    Write-Output "$($file.Name): El archivo no se encuentra base de datos de VirusTotal."
-                }
-            }
-            catch {
-                Write-Output "Ocurrio un error con $($file.Name): $_"
-            }
-        }
-    }
 }
