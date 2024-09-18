@@ -9,7 +9,8 @@ En este menu el usuario podra elegir una de las 5 opciones que corresonden a dif
 Este menu usa funiones de los modulos creados por nosotros, puede elegir una opcion del 1 al 5#>
 <#
 .EXAMPLE
-PS C:\> get-help.\main.ps1 -full#>
+PS C:\[RUTA DEL ARCHIVO] get-help.\main.ps1 -full #>
+
 New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\  VirusTotalReport.psm1"
 Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psm1"
 Get-Module Get-VirusTotalReport
