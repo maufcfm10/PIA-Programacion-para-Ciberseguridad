@@ -1,0 +1,27 @@
+DOCUMENTACION
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Sintaxis de como importar los modulos
+
+New-ModuleManifest -Path "[RUTA DEL ARCHIVO DE MAINIFESTO DEL MODULO]" -RootModule "[RUTA DEL ARCHIVO DEL MODULO]"
+Import-Module "[RUTA DEL ARCHIVO DEL MODULO]"
+Get-Module [NOMBRE DE LA FUNCION QUE QUERAMOS IMPORTAR DEL MODULO]
+
+#EJEMPLO [MAIN]
+
+New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\  VirusTotalReport.psm1"
+Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\VirusTotalReport.psm1"
+Get-Module Get-VirusTotalReport
+
+New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Arch_Oc.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Arch_Oc.psm1"
+Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Arch_Oc.psm1" 
+Get-Module archivos_ocultos 
+
+New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Recursos.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Recursos.psm1"
+Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Recursos.psm1" 
+Get-Module Show-Resources
+
+New-ModuleManifest -Path "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\conexionesSospechosas.psd1" -RootModule "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Recursos.psm1"
+Import-Module "C:\Users\raulg\Documents\GitHub\desktop-tutorial\PIA_PC\Recursos.psm1" 
+Get-Module Detectar-ConexionesSospechosas
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
